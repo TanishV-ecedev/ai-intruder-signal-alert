@@ -13,8 +13,8 @@ Detect movement from a camera feed, capture frames of activity, and later build 
 
 ## 🚀 What’s Working Now (June 2025)
 
-- [x] Motion detection using OpenCV (frame difference)
-- [x] Frame saving for intruder movement
+- [ ] Motion detection using OpenCV (frame difference)
+- [ ] Frame saving for intruder movement
 - [ ] Basic motion graph (signal-style tracking)
 - [ ] Telegram alert integration
 - [ ] ML model to classify patterns (planned)
@@ -33,8 +33,16 @@ Detect movement from a camera feed, capture frames of activity, and later build 
 
 ## 📂 Project Structure.
 
-ai-intruder-signal-alert/ ├── src/ │   ├── detect.py             ← Main motion detection script │   ├── signal_features.py    ← (Later) Converts motion into graph-style signal │   ├── alert.py              ← (Later) Sends alert via Telegram or Email ├── images/                   ← Intruder snapshots ├── README.md ├── requirements.txt
-
+```
+ai-intruder-signal-alert/
+├── src/
+│   ├── detect.py             ← Main motion detection script
+│   ├── signal_features.py    ← (Later) Converts motion into graph-style signal
+│   ├── alert.py              ← (Later) Sends alert via Telegram or Email
+├── images/                   ← Intruder snapshots
+├── README.md
+├── requirements.txt
+```
 ---
 
 ## 📅 Future Milestones
