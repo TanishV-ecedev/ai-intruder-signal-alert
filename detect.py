@@ -1,3 +1,4 @@
+from alert import send_alert
 import cv2
 import os
 from datetime import datetime
@@ -25,7 +26,8 @@ while cam.isOpened():
         timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
         filename = f"images/intruder_{timestamp}.jpg"
         cv2.imwrite(filename, frame1)
-        print(f"[ALERT] Intruder snapshot saved: {filename}")
+        print(f"[ALERT] Intruder snapshot saved: {filename}") 
+        send_alert(f"⚠️ Intruder detected at {timestamp}")
 
     cv2.imshow("Motion", thresh)
     frame1 = frame2
