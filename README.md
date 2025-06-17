@@ -1,19 +1,53 @@
-# AI-Powered Intruder Detection & Alert System 🔒🎯
+# 🔒 AI-Powered Intruder Detection & Signal-Aware Alert System
 
-A solo open-source project to detect intruders using AI (OpenCV), send alerts via Telegram/Email, and store logs in the cloud.  
-Perfect mix of Embedded + AI + IoT + Security — all built before college.
+A beginner-friendly open-source project using Python and OpenCV to detect motion or intruders from a camera feed.  
+Built by Tanish to learn computer vision, signal tracking, and eventually AI + embedded alert systems.
 
-## 🚀 Features
-- Face + motion detection using OpenCV
-- Sends alerts via Telegram or Gmail
-- Uploads image/video to cloud (Firebase or Google Drive)
-- Expandable with ESP32 / sensors later
+---
 
-## 🧠 Tech Stack
+## 🎯 Objective
+
+Detect movement from a camera feed, capture frames of activity, and later build smart features like signal-based motion patterns, AI classification, and real-time alerts.
+
+---
+
+## 🚀 What’s Working Now (June 2025)
+
+- [x] Motion detection using OpenCV (frame difference)
+- [x] Frame saving for intruder movement
+- [ ] Basic motion graph (signal-style tracking)
+- [ ] Telegram alert integration
+- [ ] ML model to classify patterns (planned)
+
+---
+
+## 🛠 Tech Stack
+
 - Python
 - OpenCV
-- Telegram Bot API / SMTP
-- Firebase / Google Drive (Cloud)
+- NumPy
+- Google Colab (for now)
+- GitHub
+
+---
+
+## 📂 Project Structure.
+
+ai-intruder-signal-alert/ ├── src/ │   ├── detect.py             ← Main motion detection script │   ├── signal_features.py    ← (Later) Converts motion into graph-style signal │   ├── alert.py              ← (Later) Sends alert via Telegram or Email ├── images/                   ← Intruder snapshots ├── README.md ├── requirements.txt
+
+---
+
+## 📅 Future Milestones
+
+- Add signal tracking graph (like motion over time)
+- Add ML model to classify "idle" vs "intruder"
+- Add alert system (Telegram bot or email)
+- Optional: run on Jetson Nano or ESP32-CAM later
+
+---
 
 ## 👨‍💻 Built By
-Tanish Vangapandu — aspiring Embedded & AI Developer. Building smart systems solo & open source.
+
+**Tanish Vangapandu**  
+Aspiring Embedded & AI Developer | ECE @ SRM AP  
+Learning by building open-source projects from scratch 🚀
