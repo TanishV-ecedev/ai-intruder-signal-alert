@@ -13,11 +13,13 @@ Detect movement from a camera feed, capture frames of activity, and later build 
 
 ## 🚀 What’s Working Now (June 2025)
 
-- [ ] Motion detection using OpenCV (frame difference)
-- [ ] Frame saving for intruder movement
-- [ ] Basic motion graph (signal-style tracking)
-- [ ] Telegram alert integration
+- [x] Motion detection using OpenCV (frame difference)
+- [x] Basic motion graph (signal-style tracking)
+- [x] Frame saving (image snapshots)
+- [x] Telegram alert integration (live bot, sends alerts)
 - [ ] ML model to classify patterns (planned)
+
+> 📲 Bot: [@tanish_intruder_bot](https://t.me/tanish_intruder_bot)
 
 ---
 
