@@ -1,39 +1,38 @@
-# 📹 AI-Powered Motion Detection Script (Starter)
-# This uses your webcam (on PC) or test video (on Colab) to detect motion.
-
 import cv2
+import os
+from datetime import datetime
 
-# Start your webcam (0 = default camera)
-cam = cv2.VideoCapture(0)
+# Create 'images' folder if not there
+if not os.path.exists("images"):
+    os.mkdir("images")
 
-# Read the first two frames for comparison
+cam = cv2.VideoCapture(0)  # 0 = default webcam
+
 ret, frame1 = cam.read()
 ret, frame2 = cam.read()
 
 while cam.isOpened():
-    # Take the difference between current and previous frame
     diff = cv2.absdiff(frame1, frame2)
-
-    # Convert the difference to grayscale
     gray = cv2.cvtColor(diff, cv2.COLOR_BGR2GRAY)
-
-    # Smooth the image to reduce noise
     blur = cv2.GaussianBlur(gray, (5, 5), 0)
-
-    # Threshold the image to highlight changes
     _, thresh = cv2.threshold(blur, 20, 255, cv2.THRESH_BINARY)
 
-    # Show the threshold output
-    cv2.imshow("Motion Detection", thresh)
+    # Count white pixels = motion strength
+    white_pixels = cv2.countNonZero(thresh)
 
-    # Update frames for next comparison
+    # Save image if movement is big enough
+    if white_pixels > 5000:  # tweak this if needed
+        timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+        filename = f"images/intruder_{timestamp}.jpg"
+        cv2.imwrite(filename, frame1)
+        print(f"[ALERT] Intruder snapshot saved: {filename}")
+
+    cv2.imshow("Motion", thresh)
     frame1 = frame2
     ret, frame2 = cam.read()
 
-    # Exit when 'q' is pressed
     if cv2.waitKey(10) == ord('q'):
         break
 
-# Release everything when done
 cam.release()
 cv2.destroyAllWindows()
